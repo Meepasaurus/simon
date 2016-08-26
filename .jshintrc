@@ -1,0 +1,10 @@
+{
+    "globals": {
+        "$": false,
+        "document": false,
+        "console": false,
+        "window": false,
+        "setInterval": false,
+        "localStorage": false
+    }
+}
