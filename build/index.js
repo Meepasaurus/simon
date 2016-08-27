@@ -1,1 +1,1 @@
-"use strict";$(document).ready(function(){});
+"use strict";var Simon=function(e,t){var n=e,o=[];return n>99?n=99:n>1&&(n=1),{generateNext:function(){o.push(Math.floor(4*Math.random())),console.log(o)},newGame:function(){o=[],this.generateNext()}}};$(document).ready(function(){var e=$.parseJSON(localStorage.getItem("score"));null===e&&(localStorage.setItem("score","0"),e=0);var t=new Simon(20,e);$(".test").on("click",function(){t.generateNext()})});
