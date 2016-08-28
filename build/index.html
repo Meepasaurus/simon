@@ -12,16 +12,49 @@
 	<main>
 	</main>
 		<section class="simon-container">
+			
 			<div class="game-row">
-				<div class="game-btn upper-left"></div>
-				<div class="game-btn upper-right"></div>
+				<div id="green" class="container" data-id="1">
+					<div class="one-by-one box">
+						<div class="content">
+					      	<div class="game-btn upper-left"></div>
+					    </div>
+					  </div>
+				</div>
+				<div id="red" class="container" data-id="0">
+					<div class="one-by-one box">
+						<div class="content">
+					      	<div class="game-btn upper-right"></div>
+					    </div>
+					  </div>
+				</div>
 			</div>
+
 			<div class="game-row">
-				<div class="game-btn lower-left"></div>
-				<div class="game-btn lower-right"></div>
+				<div id="yellow" class="container" data-id="2">
+					<div class="one-by-one box">
+						<div class="content">
+					      	<div class="game-btn lower-left"></div>
+					    </div>
+					  </div>
+				</div>
+				<div id="blue" class="container" data-id="3">
+					<div class="one-by-one box">
+						<div class="content">
+					      	<div class="game-btn lower-right"></div>
+					    </div>
+					  </div>
+				</div>
 			</div>
+
+			<section class="game-center-container">
+				<div class="game-center">
+					<div class="score">00</div>
+				</div>
+			</section>
+					
 		</section>
-		<div class="test">CLICK ME</div>
+		
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="index.js"></script>
 </body>
