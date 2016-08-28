@@ -7,3 +7,45 @@ body {
 	font-family: 'Roboto', sans-serif;
 	background-color: #90a4ae;
 }
+
+.simon-container {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.game-row {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.game-btn {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+}
+
+.upper-left {
+	border-radius: 100% 0 0 0;
+	border-width: 2px 1px 1px 2px;
+	background-color: green;
+}
+
+.upper-right {
+	border-radius: 0 100% 0 0;
+	border-width: 2px 2px 1px 1px; 
+	background-color: red;
+}
+
+.lower-left {
+	border-radius: 0 0 0 100%;
+	border-width: 1px 1px 2px 2px; 
+	background-color: yellow;
+}
+
+.lower-right {
+	border-radius: 0 0 100% 0;
+	border-width: 1px 2px 2px 1px; 
+	background-color: blue;
+}
