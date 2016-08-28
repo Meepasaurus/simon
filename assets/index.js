@@ -36,9 +36,18 @@ $(document).ready(function(){
 	}
 
 	//recommended 99 turns but freecodecamp asks for 20 turn limit
-	var mySimon = new Simon(20, localScore); 
+	var mySimon = new Simon(20, localScore);
 
-	$('.test').on('click', function(){
-		mySimon.generateNext();
+	//document.getElementById('sfx-0').play();
+	//document.getElementById('sfx-1').play();
+	//document.getElementById('sfx-2').play();
+	//document.getElementById('sfx-3').play();
+
+	$('.game-btn').on('click', function(){
+		var thisBtn = document.getElementById($(this).data('id'));
+		thisBtn.pause();
+		thisBtn.currentTime = 0;
+		thisBtn.play();
 	});
+
 });

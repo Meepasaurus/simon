@@ -12,36 +12,40 @@
 	<main>
 	</main>
 		<section class="simon-container">
-			
+			<audio id="0" src="audio/simonSound1.mp3" preload="auto"></audio>
+			<audio id="1" src="audio/simonSound2.mp3" preload="auto"></audio>
+			<audio id="2" src="audio/simonSound3.mp3" preload="auto"></audio>
+			<audio id="3" src="audio/simonSound4.mp3" preload="auto"></audio>
+
 			<div class="game-row">
-				<div id="green" class="container" data-id="1">
+				<div class="container">
 					<div class="one-by-one box">
 						<div class="content">
-					      	<div class="game-btn upper-left"></div>
+					      	<div class="game-btn upper-left" data-id="1"></div>
 					    </div>
 					  </div>
 				</div>
-				<div id="red" class="container" data-id="0">
+				<div class="container">
 					<div class="one-by-one box">
 						<div class="content">
-					      	<div class="game-btn upper-right"></div>
+					      	<div class="game-btn upper-right" data-id="0"></div>
 					    </div>
 					  </div>
 				</div>
 			</div>
 
 			<div class="game-row">
-				<div id="yellow" class="container" data-id="2">
+				<div class="container">
 					<div class="one-by-one box">
 						<div class="content">
-					      	<div class="game-btn lower-left"></div>
+					      	<div class="game-btn lower-left" data-id="2"></div>
 					    </div>
 					  </div>
 				</div>
-				<div id="blue" class="container" data-id="3">
+				<div class="container">
 					<div class="one-by-one box">
 						<div class="content">
-					      	<div class="game-btn lower-right"></div>
+					      	<div class="game-btn lower-right" data-id="3"></div>
 					    </div>
 					  </div>
 				</div>
@@ -51,8 +55,7 @@
 				<div class="game-center">
 					<div class="score">00</div>
 				</div>
-			</section>
-					
+			</section>		
 		</section>
 		
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
