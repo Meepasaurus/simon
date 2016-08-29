@@ -4,7 +4,10 @@ var Simon = function(turns, score){
 	var maxTurns = turns, //turns before "win" and restart game
 		sequence = [],
 		isStrict = false, //allows retries on incorrect input
-		currentSteps = 0,
+		isPlayerTurn = false,
+		currentSteps = 0, //total steps
+		tempSteps = 0, //used to play back sequence
+		currentPlayerSteps = 0,
 		highScore = score,
 		sfxAlternator = '0'; //helps prevent pops on rapid double-clicks
 
@@ -16,6 +19,51 @@ var Simon = function(turns, score){
 	}
 
 	return {
+		checkPlayerMove: function(btnID){
+			var thisSimon = this;
+
+			if (sequence[currentPlayerSteps] === btnID){
+				this.btnClick(btnID);
+				currentPlayerSteps++;
+			} else {
+				isPlayerTurn = false;
+				$('.score').addClass('incorrect');
+				$('.score').text('X');
+
+				window.setTimeout(function(){
+					$('.score').removeClass('incorrect');
+				}, 300);
+
+				//start over if not strict mode
+				if (!isStrict){
+					currentPlayerSteps = 0;
+					tempSteps = 0;
+					window.setTimeout(function(){
+						console.log('RETRY');
+						thisSimon.playSequence();
+					}, 750);
+				}
+			}
+
+			if (currentPlayerSteps === currentSteps){
+				console.log('NEXT ROUND');
+				isPlayerTurn = false;
+				currentSteps++;
+				currentPlayerSteps = 0;
+
+				$('.score').addClass('correct');
+				$('.score').text(currentSteps);
+				
+				window.setTimeout(function(){
+					$('.score').removeClass('correct');
+				}, 300);
+
+				window.setTimeout(function(){
+					thisSimon.generateNext();
+				}, 750);
+			}
+		},
+
 		btnClick: function(btnID){
 			this.playSound(btnID);
 			$('.btn-' + btnID).addClass('active-' + btnID);
@@ -33,23 +81,41 @@ var Simon = function(turns, score){
 		},
 
 		playSequence: function(){
-			for (var i=0, x=sequence.length; i<x; i++){
-				this.btnClick(sequence[i]);
+			var thisSimon = this;
+			this.btnClick(sequence[tempSteps]);
+
+			tempSteps++;
+			console.log(tempSteps, currentSteps);
+			
+			if (tempSteps === currentSteps){
+				isPlayerTurn = true;
+				tempSteps = 0;
+			} else {
+				window.setTimeout(function(){
+					thisSimon.playSequence();
+				}, 500);
 			}
 		},
 
 		generateNext: function(){
-			currentSteps++;
-			$('.score').text(currentSteps);
 			sequence.push(Math.floor(Math.random() * 4));
 			console.log(sequence);
 			this.playSequence();
 		},
 
+		getPlayerTurn: function(){
+			return isPlayerTurn;
+		},
+
 		newGame: function(strict){
+			isPlayerTurn = false;
 			isStrict = strict;
 			sequence = [];
-			currentSteps = 0;
+			currentSteps = 1;
+			tempSteps = 0;
+			currentPlayerSteps = 0;
+			$('.score').text(currentSteps);
+
 			this.generateNext();
 		}
 	};
@@ -68,11 +134,13 @@ $(document).ready(function(){
 	var mySimon = new Simon(20, localScore);
 
 	$('.game-btn').on('click', function(){
-		mySimon.btnClick($(this).data('id'));
+		if (mySimon.getPlayerTurn()){
+			mySimon.checkPlayerMove($(this).data('id'));
+		}
 	});
 
 	$('#new-game').on('click', function(){
-		mySimon.newGame('false');
+		mySimon.newGame(false);
 	});
 
 });
