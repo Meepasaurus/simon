@@ -11,7 +11,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 500px;
-  margin: 0 auto; }
+  margin: 0 auto 20px auto; }
 
 .one-by-one {
   position: relative; }
@@ -125,23 +125,68 @@ body {
 .incorrect {
   background-color: #d50000; }
 
+.status {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; }
+  .status p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 50px; }
+
+.new-game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; }
+
 .options {
   cursor: pointer;
   width: 100%;
-  max-width: 500px;
-  margin: 40px auto 0 auto;
+  max-width: 200px;
+  margin: 30px 10px 0 10px;
   padding: 20px;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 10px;
   color: white;
-  text-align: center; }
+  text-align: center;
+  transition: 0.2s ease-in-out all; }
+
+.options:hover,
+.options:active {
+  background-color: white;
+  color: #4e342e; }
 
 .new-btn {
-  font-size: 30px; }
+  font-size: 20px; }
+
+.high-score {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto 0px auto;
+  text-align: center;
+  font-size: 50px;
+  color: white; }
+  .high-score p {
+    margin: 0;
+    padding: 0; }
+
+#high-score {
+  font-size: 70px; }
 
 @media screen and (max-width: 450px) {
   .score {
     font-size: 60px; } }
+
+@media screen and (max-width: 400px) {
+  .status p {
+    font-size: 30px; }
+  .high-score {
+    font-size: 30px; } }
 
 @media screen and (max-width: 300px) {
   .score {

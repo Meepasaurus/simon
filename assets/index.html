@@ -10,7 +10,6 @@
 </head>
 <body>
 	<main>
-	</main>
 		<section class="simon-container">
 			<audio id="00" src="audio/simonSound1.mp3" preload="auto"></audio>
 			<audio id="01" src="audio/simonSound1.mp3" preload="auto"></audio>
@@ -62,13 +61,20 @@
 			</section>		
 		</section>
 
-		<section id="new-game" class="options">
-			<div class="new-btn">New Game</div>
+		<section class="status"><p>Let's play Simon</p></section>
+
+		<section class="new-game-container">
+			<div id="new-game" class="options">
+				<div class="new-btn">New Game</div>
+			</div>
+			
+			<div id="new-strict-game" class="options">
+				<div class="new-btn">New Strict Game</div>
+			</div>
 		</section>
-		
-		<section class="options">
-			<div class="new-btn">New Strict Game</div>
-		</section>
+
+		<section class="high-score"><p>High Score</p><p id="high-score">0</p></section>
+	</main>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="index.js"></script>
