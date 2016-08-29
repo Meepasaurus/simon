@@ -4,7 +4,8 @@ var Simon = function(turns, score){
 	var maxTurns = turns, //turns before "win" and restart game
 		sequence = [],
 		isStrict = false, //allows retries on incorrect input
-		highScore = score;
+		highScore = score,
+		sfxAlternator = '0'; //helps prevent pops on rapid double-clicks
 
 	//min and max handled
 	if (maxTurns > 99){
@@ -14,6 +15,15 @@ var Simon = function(turns, score){
 	}
 
 	return {
+		playSound: function(soundID){
+			console.log(soundID.toString() + sfxAlternator);
+			var thisBtn = document.getElementById(soundID.toString() + sfxAlternator);
+			thisBtn.pause();
+			thisBtn.currentTime = 0;
+			thisBtn.play();
+			sfxAlternator = (sfxAlternator === '0') ? '1' : '0';
+		},
+
 		generateNext: function(){
 			sequence.push(Math.floor(Math.random() * 4));
 			console.log(sequence);
@@ -44,10 +54,7 @@ $(document).ready(function(){
 	//document.getElementById('sfx-3').play();
 
 	$('.game-btn').on('click', function(){
-		var thisBtn = document.getElementById($(this).data('id'));
-		thisBtn.pause();
-		thisBtn.currentTime = 0;
-		thisBtn.play();
+		mySimon.playSound($(this).data('id'));
 	});
 
 });
