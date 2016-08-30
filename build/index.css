@@ -147,7 +147,7 @@ body {
 .options {
   cursor: pointer;
   width: 100%;
-  max-width: 200px;
+  max-width: 175px;
   margin: 30px 10px 0 10px;
   padding: 20px;
   border: 2px solid white;
@@ -162,7 +162,7 @@ body {
   color: #4e342e; }
 
 .new-btn {
-  font-size: 20px; }
+  font-size: 15px; }
 
 .high-score {
   width: 100%;
@@ -177,6 +177,13 @@ body {
 
 #high-score {
   font-size: 70px; }
+
+.info {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  color: white;
+  text-align: center; }
 
 @media screen and (max-width: 450px) {
   .score {
