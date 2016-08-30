@@ -5,7 +5,11 @@ Simon
 
 - The main four tones alternate between two audio tags with the same sound effect. This helps to prevent audio popping from rapid double-clicking. Rapid triple-clicking can still cause minor audio distortion, but a regular player would probably not encounter it.
 
-TODO
-====
+Audio Credits
+-------------
 
-- Add error sound effect.
+- Main four tones edited from freecodecamp.
+
+- Miss effect created with Bfxr. http://www.bfxr.net/
+
+- Success clip that no one will probably ever hear from https://www.freesound.org/people/jbeetle/sounds/274510/

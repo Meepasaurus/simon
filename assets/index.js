@@ -28,7 +28,9 @@ var Simon = function(turns, score){
 			if (sequence[currentPlayerSteps] === btnID){
 				this.btnClick(btnID);
 				currentPlayerSteps++;
+			//wrong input
 			} else {
+				document.getElementById('miss').play();
 				isPlayerTurn = false;
 				$('.score').addClass('incorrect');
 				$('.score').text('X');
@@ -82,6 +84,7 @@ var Simon = function(turns, score){
 				if (currentSteps >= maxTurns + 1){
 					$('.score').text(currentSteps - 1);
 					$('.status').find('p').text('You win!');
+					document.getElementById('success').play();
 				} else {
 					$('.score').text(currentSteps);
 					window.setTimeout(function(){
