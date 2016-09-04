@@ -1,0 +1,25 @@
+{
+  "name": "simon",
+  "version": "1.0.0",
+  "description": "Simon\r =====",
+  "main": "assets/index.js",
+  "dependencies": {
+    "gulp-uglify": "^2.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meepasaurus/simon.git"
+  },
+  "author": "Benjamin Kantor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meepasaurus/simon/issues"
+  },
+  "homepage": "https://github.com/Meepasaurus/simon#readme"
+}
